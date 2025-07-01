@@ -26,7 +26,7 @@ EXPLICAÇÃO DO SUM
 lista.stream() - Cria um Stream da lista.
 Transforma a lista e um fluxo de dados n1 -> n2 -> n3 -> ...
 
-.mapToInt/Double/Long(Integer::intValue) - Faz a conversão dos objeto que estão na list(lidos como inteiros)
+.mapToInt/Double/Long(Integer::intValue) - Faz a conversão dos objeto que estão na list(lidos como wrappers)
 para valores primitivos(int, long, double)
 
 .sum() - soma todos os elementos do intStream
