@@ -14,7 +14,7 @@ public class ex037I {
             int num = input.nextInt();
             valuesPair.add((num % 2 == 0) ? num:0);
         }
-        int sum = valuesPair.stream().mapToInt(Integer::intValue).sum();
+        int sum = valuesPair.stream().mapToInt(n -> n).sum();
         System.out.printf("A soma do valores pares é %d", sum);
     }
 }
