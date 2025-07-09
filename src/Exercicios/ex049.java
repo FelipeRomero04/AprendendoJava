@@ -20,12 +20,13 @@ public class ex049 {
         values.add(num2);
 
         String line;
-        int option;
+        int option = 0;
 
-        while (true) {
-            System.out.println("\nMENU:\n[1] Somar\n[2] Multiplicar\n[3] Maior\n[4]Novos números\n[5]Sair do Programa");
+        while (option != 5) {
+            System.out.println("\nMENU:\n[1] Somar\n[2] Multiplicar\n[3] Maior\n[4] Novos números\n[5] Sair do Programa");
             System.out.print("Opções: ");
             line = input.nextLine();
+
             try{
                 option = Integer.parseInt(line);
                 if (option > 5){
@@ -39,16 +40,25 @@ public class ex049 {
             if(option == 1){
                 double sum = values.stream().mapToDouble(n -> n).sum();
                 System.out.printf("A soma dos números %.1f + %.1f = %.1f\n", num1, num2, sum);
-            }else if(option == 2){
+            }else if (option == 2){
                 double product = num1 * num2;
                 System.out.printf("O produto de %.1f x %.1f = %.1f\n", num1, num2, product);
-            } else if (option == 3) {
+            } else if (option == 3){
                 double bigger = Collections.max(values);
                 System.out.printf("Entre %.1f e %.1f o maior é %.1f\n", num1, num2, bigger);
+            } else if (option == 4){
+                num1 = input.nextDouble();
+                num2 = input.nextDouble();
+                input.nextLine();
             }
 
+            try {
+                Thread.sleep(2000);
+            }catch (Exception e){
+                System.out.printf("ERRO: %s\n", e);
+            }
 
         }
-
+        System.out.print("Programa Finalizado... Até!");
     }
 }
