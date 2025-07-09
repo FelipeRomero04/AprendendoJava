@@ -1,8 +1,8 @@
 package Exercicios;
 
-import java.awt.*;
+
 import java.util.List;
-import java.util.stream.Stream;
+
 
 
 public class ex038 {
