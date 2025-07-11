@@ -7,22 +7,23 @@ public class ex053 {
         Scanner input = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
 
+        System.out.print("Quantos números da sequência de fibonacci quer ver? ");
         int terms = input.nextInt();
 
         int f1 = 0;
         int f2 = 1;
-        int total = 0;
+        int total;
 
         while(terms != 0){
-            System.out.printf("%d -> ", f1);
+            sb.append(f1).append(" -> ");
 
             total = f1 + f2;
             f1 = f2;
             f2 = total;
 
-        // TENTAR ENTENDER DE VEZ!!! A IMPORTANCIA DA ORDEM
             terms--;
         }
+        System.out.print(sb);
         System.out.println("FIM");
 
 
