@@ -1,24 +1,28 @@
 package Exercicios;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class ex062 {
     public static void main(String[] args){
-        String[] clubs = {
-                "Palmeiras", "Flamengo", "Internacional", "Grêmio", "São Paulo",
+        List<String> clubs = Arrays.asList("Palmeiras", "Flamengo", "Internacional", "Grêmio", "São Paulo",
                 "Atlético-MG", "Atlético-PR", "Cruzeiro", "Botafogo", "Santos",
                 "Bahia", "Fluminense", "Corinthians", "Chapecoense", "Ceará",
-                "Vasco", "Sport", "América-MG", "Vitória", "Paraná"};
+                "Vasco", "Sport", "América-MG", "Vitória", "Paraná");
 
-        String[] clubsOrdenado = Arrays.stream(clubs).sorted().toArray(String[]::new);
-        //VER Q PORRA ESSA N ENTENDI NADA
+        System.out.printf("Lista do BRASILEIRÃO: %s\n\n", clubs);
 
-        System.out.printf("Lista do BRASILEIRÃO: %s", Arrays.toString(clubs));
+        System.out.printf("Os 5 primeiros colocados são %s\n\n", clubs.subList(0,6));
 
-        Arrays.sort(clubs);
-        System.out.println("Times em ordem alfabética");
+        System.out.printf("Os 4 últimos colocados são %s\n\n", clubs.subList(clubs.size() - 4, clubs.size()));
+
+        List<String> clubsSorted = clubs.stream().sorted().toList();
+        System.out.printf("Times em ordem alfabética: %s\n\n", clubsSorted);
+
+        System.out.printf("A chapecoense está na %dº posição do campeonato", clubs.indexOf("Chapecoense") + 1);
 
     }
 }
