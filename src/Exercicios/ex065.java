@@ -7,37 +7,36 @@ public class ex065 {
         List<Integer> values = new ArrayList<>();
         Scanner input = new Scanner(System.in);
 
-        int num = 0;
+        int num;
 
-        for (int i = 1; i < 6 ; i++) {
+        for (int i = 1; i < 5 ; i++) {
             System.out.printf("Digite um valor na posição %d: ", i);
             try{
                 num = Integer.parseInt(input.nextLine());
+                values.add(num);
             }catch (Exception e){
-                System.out.println("ERROR: Um caractere inválido foi encontrado! Tente novamente.");
+                System.out.println("ERROR: Um numero inválido foi desconsiderado pelo sistema.");
             }
-            values.add(num);
+
         }
-        System.out.printf("Você digitou os valores %d: ", values.toArray());
+        System.out.printf("Você digitou os valores: %s\n", values);
 
         int bigger = Collections.max(values);
-        System.out.printf("O menor valor digitado foi %d nas posições ", bigger);
+        System.out.printf("O maior valor digitado foi %d nas posições ", bigger);
 
-        for(int j : values) {
-            if (j == bigger) {
-                System.out.printf("%d...", values.indexOf(j));
+        for(int j = 0; j < values.size(); j++) {
+            if (values.get(j) == bigger) {
+                System.out.printf("%d...", j);
             }
         }
 
-
         int smaller = Collections.min(values);
-        System.out.printf("\nO menor valor digitado foi %d nas posições \n", smaller);
+        System.out.printf("\nO menor valor digitado foi %d nas posições ", smaller);
 
-        for(int j : values) {
-            if (j == smaller) {
-                System.out.printf("%d...", values.indexOf(j));
+        for(int j = 0; j < values.size(); j++) {
+            if (values.get(j) == smaller) {
+                System.out.printf("%d...", j);
             }
         }
     }
 }
-//ARRUMAR TUDO FIZ MERDA SIFUDE
