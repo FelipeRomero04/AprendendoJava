@@ -14,7 +14,7 @@ public class ex071 {
             users.clear();
 
             System.out.print("Digite seu nome: ");
-            String name = input.nextLine();
+            String name = input.nextLine().trim();
 
             boolean hasDigit = false;
             for (char l : name.toCharArray())
@@ -60,29 +60,20 @@ public class ex071 {
         }while(!(option.charAt(0) == 'N'));
 
 
+        double maxWeight = Double.parseDouble(date.get(0).get(1));
+        double minWeight = Double.parseDouble((date.get(0).get(1)));
 
-        double maxWeight = 0;
-        double minWeight = 0;
+        for (List<String> list : date) {
 
-        for (int i = 0; i < date.size(); i++) {  //Tenta substituir esse lixo por um foreach
+            double line = Double.parseDouble(list.get(1));
 
-            if(i == 0){
-                maxWeight = Double.parseDouble(date.get(0).get(1));
-
-                minWeight = Double.parseDouble(date.get(0).get(1));
-                continue;
+            if (maxWeight <= line){
+                maxWeight = line;
             }
-            for (int j = 1; j < date.get(i).size(); j++){
-                double line = Double.parseDouble(date.get(i).get(j));
-
-                if (maxWeight <= line){
-                    maxWeight = line;
-                }
-                if (line <= minWeight){
-                    minWeight = line;
-                }
-
+            if (line <= minWeight){
+                minWeight = line;
             }
+
         }
 
         System.out.printf("O maior peso foi de %.1fKg. Peso de ", maxWeight);
@@ -90,7 +81,7 @@ public class ex071 {
         for (List<String> user : date) {
             String weightUserMax = user.get(1);
             String nameUserMax = user.get(0);
-            if (weightUserMax.equals(String.valueOf(maxWeight))) {
+            if (Double.parseDouble(weightUserMax) == maxWeight) {
                 System.out.printf("[%s] ", nameUserMax);
             }
 
@@ -101,7 +92,7 @@ public class ex071 {
         for (List<String> user : date){
             String weightUserMin = user.get(1);
             String nameUserMin = user.get(0);
-            if (weightUserMin.equals(String.valueOf(minWeight))){
+            if (Double.parseDouble(weightUserMin) == minWeight){
                 System.out.printf("[%s] ",nameUserMin);
             }
 
