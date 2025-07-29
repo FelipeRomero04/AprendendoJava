@@ -32,7 +32,7 @@ public class arraysMultidimensionais {
 //            }
 //        }
 
-        System.out.println(Arrays.toString(numbers[0]));
+        System.out.println(Arrays.toString(numbers));
 
 
     }
