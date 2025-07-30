@@ -17,9 +17,15 @@ public class ex074 {
         for (int i = 1; i < matriz.length + 1; i++) {
             for (int j = 1; j < matriz[i - 1].length + 1; j++) {
                 System.out.printf("Digite o número da posição [%d, %d]: ", i, j);
-                num = Integer.parseInt(input.nextLine());
-                matriz[i - 1][j - 1] = num;
-
+                try {
+                    num = Integer.parseInt(input.nextLine());
+                    matriz[i - 1][j - 1] = num;
+                } catch(Exception e){
+                    System.out.println("ERROR: Valor inválido foi inserido, tente novamente.");
+                    j--;
+                    continue;
+                }
+                    
                 if(matriz[i - 1][j - 1] % 2 == 0){
                     sumPair += num;
                 }
