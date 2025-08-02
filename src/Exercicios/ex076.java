@@ -34,9 +34,13 @@ public class ex076 {
                 }
                 System.out.println("Opção Inválida.");
             }
+
         } while(!(option.charAt(0) == 'N'));
 
         System.out.println(dates);
+
+
+
 
 
         for (int i = 0; i < dates.size(); i++) {
