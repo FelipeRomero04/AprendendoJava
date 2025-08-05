@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ex077 {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        Map<String, Double> studentStatus = new HashMap<>();
+        Map<String, String> studentStatus = new HashMap<>();
 
         System.out.print("Nome: ");
         String name = input.nextLine();
@@ -17,13 +17,16 @@ public class ex077 {
 
         String status = "APROVADO";
         if (average < 5) status = "REPROVADO";
-        else status = "RECUPERAÇÃO";
+        else if (average < 7 ) status = "RECUPERAÇÃO";
 
-        studentStatus.put(name, average);
+        studentStatus.put(name, String.valueOf(average));
+        studentStatus.put("Status", status);
 
 
-        System.out.printf("- Name is %s\n -Average is %.1f", name, studentStatus.get(name));
+
+        System.out.printf(" - Name is %s\n - Average is %s\n - Situation: %s" , name, String.join("",studentStatus.get(name)), studentStatus.get("Status"));
 
 
     }
+
 }
