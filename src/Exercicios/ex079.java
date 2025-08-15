@@ -1,7 +1,6 @@
 package Exercicios;
 
 import java.time.LocalDate;
-
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
@@ -21,7 +20,6 @@ public class ex079 {
             System.out.println("'Nome' contem caracteres inválidos. Tente novamente!");
             return;
         }
-
         System.out.print("Ano de Nascimento: ");
         String line = input.nextLine().trim();
 
