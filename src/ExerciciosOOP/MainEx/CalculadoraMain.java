@@ -11,5 +11,8 @@ public class CalculadoraMain {
 
         double resultDivision = calculator.division(10, 0);
         System.out.println(resultDivision);
+
+        int sum = calculator.sumAll(1,2,3,4,5,6,7);
+        System.out.println(sum);
     }
 }

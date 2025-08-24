@@ -46,6 +46,7 @@ public class ex082 {
                 }
                 listGols.add(String.valueOf(gols));
             }
+
             Map<String, String> players = new LinkedHashMap<>();
             players.put("Id", String.valueOf(playerStatistic.size() + 1));
             players.put("Nome", namePlayer);
