@@ -10,7 +10,7 @@ public class FuncionarioMain {
 
         employee.name = "Jose";
         employee.age = 23;
-//        employee.wages = new double[3];
+        employee.wages = new double[3];
 
         employee.readWage();
         employee.print();
