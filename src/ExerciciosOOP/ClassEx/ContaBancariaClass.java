@@ -50,4 +50,4 @@ public class ContaBancariaClass {
     }
 }
 
-//valor depositado
+//Posteriormente tentar fazer um crud nesse exercício.

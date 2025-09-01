@@ -9,7 +9,7 @@ public class ContaBancariaMain {
         try{
             myBank.transferValue(myBank2, 5000);
         }catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
         myBank2.printSale();
         myBank.printSale();
