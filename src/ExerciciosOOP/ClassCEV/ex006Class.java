@@ -11,7 +11,7 @@ public class ex006Class {
         DateTimeFormatter formatted = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.print("Data de nascimento: ");
         String yearOfBirth = input.nextLine().replaceAll("\\D", "/");
-//
+
         if(yearOfBirth.matches("(\\d{4})/(\\d{2})/(\\d{2})")){
             yearOfBirth = yearOfBirth.replaceFirst("(\\d{4})/(\\d{2})/(\\d{2})", "$3/$2/$1");
         } else if (!yearOfBirth.matches("(\\d{2})/(\\d{2})/(\\d{4})")){
@@ -23,7 +23,7 @@ public class ex006Class {
 
     public void validVote(LocalDate birth){
         int age = Period.between(birth, LocalDate.now()).getYears();
-//
+
         System.out.print("Com "+age+" anos: ");
         if(age >= 18 && age <= 75){
             System.out.println("VOTO OBRIGATÓRIO.");
